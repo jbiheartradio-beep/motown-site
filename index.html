@@ -6,52 +6,93 @@
     <title>Motown Custom Cycles | Detroit Heritage</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary: #f37021; --dark: #0a0a0a; }
+        :root { --primary: #f37021; --dark: #0a0a0a; --grey: #222; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Impact', 'Arial Black', sans-serif; }
-        body { background-color: var(--dark); color: white; }
+        body { background-color: var(--dark); color: white; scroll-behavior: smooth; }
         
-        /* Navigation */
-        nav { background: rgba(0,0,0,0.95); padding: 1rem; text-align: center; border-bottom: 4px solid var(--primary); position: fixed; width: 100%; z-index: 100; }
-        
+        /* Facebook Link in Top Left */
+        .fb-top { position: fixed; top: 15px; left: 20px; z-index: 1000; color: white; text-decoration: none; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 5px 10px; border-radius: 3px; border: 1px solid var(--primary); }
+        .fb-top:hover { background: var(--primary); }
+
         /* Hero Section */
         header { 
             height: 100vh; 
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('motown_bikes.jpg') center/cover no-repeat;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
-            border-bottom: 10px solid var(--primary);
         }
-
         header h1 { font-size: clamp(3rem, 10vw, 6rem); text-transform: uppercase; line-height: 0.8; letter-spacing: -2px; }
-        .tagline { color: var(--primary); font-size: 1.8rem; margin-top: 20px; text-transform: uppercase; font-weight: bold; }
-        .heritage { font-size: 1rem; letter-spacing: 4px; margin-top: 10px; color: #aaa; }
-
-        .btn { background: var(--primary); color: white; padding: 18px 40px; text-decoration: none; margin-top: 30px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; }
-        .btn:hover { background: white; color: var(--primary); }
-
-        /* Content */
-        .section { padding: 80px 10%; text-align: center; }
-        h2 { font-size: 3rem; margin-bottom: 20px; text-transform: uppercase; }
         .accent { color: var(--primary); }
+        .tagline { color: var(--primary); font-size: 1.5rem; margin-top: 20px; text-transform: uppercase; }
+
+        /* Form Section */
+        .form-section { padding: 80px 10%; background: var(--grey); }
+        .form-container { max-width: 600px; margin: 0 auto; background: var(--dark); padding: 30px; border: 2px solid var(--primary); }
+        .form-container h2 { margin-bottom: 20px; text-align: center; color: var(--primary); }
+        
+        .form-group { margin-bottom: 15px; text-align: left; }
+        label { display: block; margin-bottom: 5px; font-size: 0.8rem; letter-spacing: 1px; color: #aaa; }
+        input, select, textarea { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: white; font-family: sans-serif; }
+        input:focus { border-color: var(--primary); outline: none; }
+        
+        .submit-btn { width: 100%; background: var(--primary); color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 1.1rem; margin-top: 10px; }
+        .submit-btn:hover { background: white; color: var(--primary); }
+
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #555; }
     </style>
 </head>
 <body>
 
-    <nav>MOTOWN CUSTOM CYCLES</nav>
+    <a href="https://www.facebook.com/motowncustomcycles" class="fb-top" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
 
     <header>
-        <p class="heritage">40 YEARS OF HERITAGE</p>
+        <p style="letter-spacing: 4px; color: #aaa;">40 YEARS OF HERITAGE</p>
         <h1>DETROIT BRED<br><span class="accent">BUILT TO LAST</span></h1>
-        <p class="tagline">Custom Fabrication & Harley Service</p>
-        <a href="https://www.facebook.com/motowncustomcycles" class="btn" target="_blank">FOLLOW THE BUILD</a>
+        <p class="tagline">Custom Fabrication & Service</p>
     </header>
 
-    <section class="section">
-        <h2>THE <span class="accent">GARAGE</span></h2>
-        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc;">
-            We don't just fix bikes; we preserve the iron. From full engine rebuilds to custom frame fabrication, we bring 40 years of Detroit grit to every machine that rolls through our doors.
-        </p>
-        <p style="margin-top: 40px; font-weight: bold;">5671 Michigan Ave, Detroit, MI | (313) 262-6022</p>
+    <section class="form-section">
+        <div class="form-container">
+            <h2>SERVICE INTAKE</h2>
+            <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+                <div class="form-group">
+                    <label>FULL NAME</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>PHONE NUMBER</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>YEAR / MAKE / MODEL</label>
+                    <input type="text" name="bike" placeholder="e.g. 2015 Harley Road Glide" required>
+                </div>
+                <div class="form-group">
+                    <label>SERVICE REQUESTED</label>
+                    <select name="service">
+                        <option value="General Service">General Maintenance</option>
+                        <option value="Custom Fabrication">Custom Fabrication</option>
+                        <option value="Engine Work">Engine Build/Performance</option>
+                        <option value="Paint/Cosmetic">Custom Paint</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ESTIMATED BUDGET</label>
+                    <input type="text" name="budget" placeholder="What are you looking to spend?">
+                </div>
+                <div class="form-group">
+                    <label>TELL US ABOUT THE PROJECT</label>
+                    <textarea name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+            </form>
+        </div>
     </section>
+
+    <footer>
+        <p>5671 MICHIGAN AVE, DETROIT, MI | (313) 262-6022</p>
+        <p>&copy; MOTOWN CUSTOM CYCLES</p>
+    </footer>
 
 </body>
 </html>

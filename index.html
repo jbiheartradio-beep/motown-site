@@ -3,34 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motown Custom Cycles | Detroit</title>
+    <title>Motown Custom Cycles | Detroit Heritage</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary: #f37021; --dark: #111; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial Black', sans-serif; }
+        :root { --primary: #f37021; --dark: #0a0a0a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Impact', 'Arial Black', sans-serif; }
         body { background-color: var(--dark); color: white; }
-        nav { background: rgba(0,0,0,0.9); padding: 1.5rem; text-align: center; border-bottom: 3px solid var(--primary); width: 100%; position: fixed; z-index: 10; }
+        
+        /* Navigation */
+        nav { background: rgba(0,0,0,0.95); padding: 1rem; text-align: center; border-bottom: 4px solid var(--primary); position: fixed; width: 100%; z-index: 100; }
+        
+        /* Hero Section */
         header { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('motown_bikes.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('motown_bikes.jpg') center/cover no-repeat;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+            border-bottom: 10px solid var(--primary);
         }
-        header h1 { font-size: 4.5rem; text-transform: uppercase; line-height: 0.8; color: white; }
-        .btn { background: var(--primary); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; margin-top: 25px; font-weight: bold; display: inline-block; }
-        .section { padding: 60px 10%; text-align: center; }
+
+        header h1 { font-size: clamp(3rem, 10vw, 6rem); text-transform: uppercase; line-height: 0.8; letter-spacing: -2px; }
+        .tagline { color: var(--primary); font-size: 1.8rem; margin-top: 20px; text-transform: uppercase; font-weight: bold; }
+        .heritage { font-size: 1rem; letter-spacing: 4px; margin-top: 10px; color: #aaa; }
+
+        .btn { background: var(--primary); color: white; padding: 18px 40px; text-decoration: none; margin-top: 30px; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: 0.3s; }
+        .btn:hover { background: white; color: var(--primary); }
+
+        /* Content */
+        .section { padding: 80px 10%; text-align: center; }
+        h2 { font-size: 3rem; margin-bottom: 20px; text-transform: uppercase; }
+        .accent { color: var(--primary); }
     </style>
 </head>
 <body>
-    <nav>MOTOWN CUSTOM CYCLES - DETROIT</nav>
+
+    <nav>MOTOWN CUSTOM CYCLES</nav>
+
     <header>
-        <h1>MOTOWN<br>CUSTOM CYCLES</h1>
-        <p style="color:var(--primary); letter-spacing: 5px; font-size: 1.5rem; margin-top: 15px;">EST. 1992</p>
-        <a href="https://www.facebook.com/motowncustomcycles" class="btn" target="_blank">VISIT FACEBOOK</a>
+        <p class="heritage">40 YEARS OF HERITAGE</p>
+        <h1>DETROIT BRED<br><span class="accent">BUILT TO LAST</span></h1>
+        <p class="tagline">Custom Fabrication & Harley Service</p>
+        <a href="https://www.facebook.com/motowncustomcycles" class="btn" target="_blank">FOLLOW THE BUILD</a>
     </header>
+
     <section class="section">
-        <h2>5671 Michigan Ave, Detroit, MI</h2>
-        <p style="margin-top:20px;">Harley-Davidson Specialists | Fabrication | Custom Paint</p>
-        <p style="margin-top:10px;">Call: (313) 262-6022</p>
+        <h2>THE <span class="accent">GARAGE</span></h2>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc;">
+            We don't just fix bikes; we preserve the iron. From full engine rebuilds to custom frame fabrication, we bring 40 years of Detroit grit to every machine that rolls through our doors.
+        </p>
+        <p style="margin-top: 40px; font-weight: bold;">5671 Michigan Ave, Detroit, MI | (313) 262-6022</p>
     </section>
+
 </body>
 </html>

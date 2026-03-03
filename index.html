@@ -3,41 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motown Custom Cycles | Detroit Heritage</title>
+    <title>Motown Custom Cycles | Dave 'Easy' Arzola</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary: #f37021; --dark: #0a0a0a; --grey: #222; }
+        :root { --primary: #f37021; --dark: #0a0a0a; --grey: #1a1a1a; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Impact', 'Arial Black', sans-serif; }
-        body { background-color: var(--dark); color: white; scroll-behavior: smooth; }
+        body { background-color: var(--dark); color: white; scroll-behavior: smooth; line-height: 1.4; }
         
-        /* Facebook Link in Top Left */
-        .fb-top { position: fixed; top: 15px; left: 20px; z-index: 1000; color: white; text-decoration: none; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 5px 10px; border-radius: 3px; border: 1px solid var(--primary); }
+        /* Facebook Link */
+        .fb-top { position: fixed; top: 15px; left: 20px; z-index: 1000; color: white; text-decoration: none; font-size: 0.8rem; background: rgba(0,0,0,0.8); padding: 8px 15px; border-radius: 2px; border: 1px solid var(--primary); letter-spacing: 1px; }
         .fb-top:hover { background: var(--primary); }
 
-        /* Hero Section */
+        /* Hero */
         header { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('motown_bikes.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('motown_bikes.jpg') center/cover no-repeat;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+            padding: 20px;
         }
-        header h1 { font-size: clamp(3rem, 10vw, 6rem); text-transform: uppercase; line-height: 0.8; letter-spacing: -2px; }
+        header h1 { font-size: clamp(3.5rem, 12vw, 7rem); text-transform: uppercase; line-height: 0.8; letter-spacing: -2px; }
         .accent { color: var(--primary); }
-        .tagline { color: var(--primary); font-size: 1.5rem; margin-top: 20px; text-transform: uppercase; }
+        
+        /* About Section */
+        .about-section { padding: 100px 10%; background: var(--dark); text-align: center; border-top: 5px solid var(--primary); }
+        .about-content { max-width: 800px; margin: 0 auto; }
+        .about-section h2 { font-size: 3rem; margin-bottom: 20px; color: var(--primary); }
+        .about-section p { font-family: 'Helvetica', sans-serif; font-size: 1.2rem; color: #ccc; margin-bottom: 25px; line-height: 1.8; }
+        .quote { font-style: italic; color: white; border-left: 4px solid var(--primary); padding-left: 20px; text-align: left; margin: 40px 0; }
 
         /* Form Section */
-        .form-section { padding: 80px 10%; background: var(--grey); }
-        .form-container { max-width: 600px; margin: 0 auto; background: var(--dark); padding: 30px; border: 2px solid var(--primary); }
-        .form-container h2 { margin-bottom: 20px; text-align: center; color: var(--primary); }
+        .form-section { padding: 80px 10%; background: var(--grey); border-top: 1px solid #333; }
+        .form-container { max-width: 600px; margin: 0 auto; background: var(--dark); padding: 40px; border: 1px solid #444; position: relative; }
+        .form-container::before { content: ""; position: absolute; top: -5px; left: -5px; width: 20px; height: 20px; border-top: 3px solid var(--primary); border-left: 3px solid var(--primary); }
+        .form-container h2 { margin-bottom: 30px; text-align: center; font-size: 2.5rem; }
         
-        .form-group { margin-bottom: 15px; text-align: left; }
-        label { display: block; margin-bottom: 5px; font-size: 0.8rem; letter-spacing: 1px; color: #aaa; }
-        input, select, textarea { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: white; font-family: sans-serif; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        label { display: block; margin-bottom: 8px; font-size: 0.75rem; letter-spacing: 2px; color: var(--primary); text-transform: uppercase; }
+        input, select, textarea { width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; font-family: 'Helvetica', sans-serif; border-radius: 0; }
         input:focus { border-color: var(--primary); outline: none; }
         
-        .submit-btn { width: 100%; background: var(--primary); color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 1.1rem; margin-top: 10px; }
+        .submit-btn { width: 100%; background: var(--primary); color: white; padding: 20px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 1.2rem; transition: 0.3s; }
         .submit-btn:hover { background: white; color: var(--primary); }
 
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #555; }
+        footer { text-align: center; padding: 60px 20px; background: #000; color: #666; font-size: 0.9rem; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
@@ -45,53 +53,66 @@
     <a href="https://www.facebook.com/motowncustomcycles" class="fb-top" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
 
     <header>
-        <p style="letter-spacing: 4px; color: #aaa;">40 YEARS OF HERITAGE</p>
+        <p style="letter-spacing: 8px; color: #aaa; margin-bottom: 10px;">EST. 1992</p>
         <h1>DETROIT BRED<br><span class="accent">BUILT TO LAST</span></h1>
-        <p class="tagline">Custom Fabrication & Service</p>
+        <p style="color:var(--primary); font-size: 1.4rem; margin-top: 20px; letter-spacing: 3px;">PRECISION GRIT BY DAVE 'EASY' ARZOLA</p>
     </header>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h2>THE <span class="accent">HERITAGE</span></h2>
+            <p><strong>40 YEARS OF DETROIT GRIT</strong></p>
+            <p>Founded by Dave 'Easy' Arzola—a man who was already customizing mini-bikes at age 11—our roots run as deep as the city's industrial soul. With over 30 years of Michigan Avenue mastery, Dave has defined what it means to build a machine with hand-crafted precision.</p>
+            
+            <div class="quote">
+                "We don't do bolt-on parts or cookie-cutter builds. From frame-up restorations to high-performance engine work, every bike that leaves our floor is a piece of Detroit history, hammered out with sweat, sparks, and precision."
+            </div>
+            
+            <p style="color: var(--primary); font-weight: bold; letter-spacing: 2px;">5671 MICHIGAN AVE | DETROIT, MI</p>
+        </div>
+    </section>
 
     <section class="form-section">
         <div class="form-container">
             <h2>SERVICE INTAKE</h2>
-            <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+            <form action="#" method="POST">
                 <div class="form-group">
                     <label>FULL NAME</label>
                     <input type="text" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label>PHONE NUMBER</label>
+                    <label>PHONE</label>
                     <input type="tel" name="phone" required>
                 </div>
                 <div class="form-group">
                     <label>YEAR / MAKE / MODEL</label>
-                    <input type="text" name="bike" placeholder="e.g. 2015 Harley Road Glide" required>
+                    <input type="text" name="bike" placeholder="e.g. 1974 Shovelhead" required>
                 </div>
                 <div class="form-group">
-                    <label>SERVICE REQUESTED</label>
+                    <label>SERVICE TYPE</label>
                     <select name="service">
-                        <option value="General Service">General Maintenance</option>
-                        <option value="Custom Fabrication">Custom Fabrication</option>
-                        <option value="Engine Work">Engine Build/Performance</option>
-                        <option value="Paint/Cosmetic">Custom Paint</option>
-                        <option value="Other">Other</option>
+                        <option value="Restoration">Full Restoration</option>
+                        <option value="Fabrication">Custom Fabrication</option>
+                        <option value="Engine">Performance Engine Work</option>
+                        <option value="General">General Service</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>ESTIMATED BUDGET</label>
-                    <input type="text" name="budget" placeholder="What are you looking to spend?">
+                    <label>PROJECT BUDGET</label>
+                    <input type="text" name="budget" placeholder="What's the investment range?">
                 </div>
                 <div class="form-group">
-                    <label>TELL US ABOUT THE PROJECT</label>
-                    <textarea name="message" rows="4"></textarea>
+                    <label>THE PROJECT GOAL</label>
+                    <textarea name="message" rows="4" placeholder="Tell Dave what you're looking to build..."></textarea>
                 </div>
-                <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+                <button type="submit" class="submit-btn">SUBMIT TO THE SHOP</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>5671 MICHIGAN AVE, DETROIT, MI | (313) 262-6022</p>
-        <p>&copy; MOTOWN CUSTOM CYCLES</p>
+        <p>MOTOWN CUSTOM CYCLES &copy; 2026 | ALL RIGHTS RESERVED</p>
+        <p style="margin-top: 10px; letter-spacing: 2px;">(313) 262-6022</p>
     </footer>
 
 </body>
